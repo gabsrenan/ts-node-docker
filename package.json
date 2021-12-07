@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "build": "tsc",
-    "start": "yarn build && node build/src/index.js",
+    "start": "yarn build && node build/src/server.js",
+    "dev": "yarn build && ts-node-dev --inspect --transpile-only --ignore-watch node_modules build/src/server.js",
+    "trace": "yarn build && node build/src/server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -25,15 +27,17 @@
   },
   "homepage": "",
   "dependencies": {
+    "express": "^4.17.1",
     "express-routes": "^1.0.1"
   },
   "devDependencies": {
+    "@types/express": "^4.17.13",
+    "@types/module-alias": "2.0.1",
     "@types/node": "^13.13.2",
     "@typescript-eslint/eslint-plugin": "^5.5.0",
     "@typescript-eslint/parser": "^5.5.0",
-    "eslint": "^8.3.0",
-    "typescript": "^3.8.3",
-    "@types/module-alias":"2.0.1",
-    "eslint":"7.2.0"
+    "eslint": "7.2.0",
+    "ts-node-dev": "^1.1.8",
+    "typescript": "^3.8.3"
   }
 }
